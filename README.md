@@ -85,6 +85,33 @@ Uma coleção chamada Tests será criada na base de dados.
 ### Code Linter
 Este projeto utiliza um linter de código chamado <a href="https://www.npmjs.com/package/eslint">Eslint</a> configurado com <a href="https://www.npmjs.com/package/eslint-config-airbnb-base">Airnbnb linteres.</a> As configurações dos linteres estão no arquivo <a href="https://github.com/barretot/SingUp-SigIn-App/blob/master/.eslintrc.js">.eslintrc.js</a> e <a href="https://github.com/barretot/SingUp-SigIn-App/blob/master/.prettierrc">.prettierrc </a>  O arquivo <a href="https://github.com/barretot/SingUp-SigIn-App/blob/master/.editorconfig">.editorconfig</a> configura o projeto para atender a determinados linteres para qualquer editor aceitar, para ler mais acesse <a href="https://editorconfig.org/"> EditorConfig documentation</a>
 
+#### Dependencies
+
+* <a href="https://www.npmjs.com/package/mongoose">Mongoose</a>
+* <a href="https://www.npmjs.com/package/express">Express</a>  
+* <a href="https://www.npmjs.com/package/dotenv">Dotenv</a> 
+* <a href="https://www.npmjs.com/package/yup">Yup</a> 
+* <a href="https://www.npmjs.com/package/bcryptjs">BcryptJs</a> 
+* <a href="https://www.npmjs.com/package/jsonwebtoken">JsonWebToken</a> 
+* <a href="https://www.npmjs.com/package/bcryptjs">BcryptJs</a> 
+* <a href="https://www.npmjs.com/package/uuidv4">uuidv4</a> 
+
+
+#### Dev Dependencies
+* <a href="https://www.npmjs.com/package/eslint">Eslint</a>
+* <a href="https://www.npmjs.com/package/eslint-config-airbnb-base">Eslint-config-airbnb-base</a>
+* <a href="https://www.npmjs.com/package/eslint-config-prettier">Eslint-config-prettier</a>
+* <a href="https://www.npmjs.com/package/eslint-plugin-prettier">Eslint-plugin-prettier</a>
+* <a href="https://www.npmjs.com/package/eslint-plugin-import">Eslint-plugin-import</a> 
+* <a href="https://www.npmjs.com/package/prettier">Prettier</a>
+* <a href="https://www.npmjs.com/package/jest">Jest</a>
+* <a href=https://www.npmjs.com/package/@shelf/jest-mongodb>@shelf/jest-mongodb</a>
+* <a href="https://www.npmjs.com/package/supertest">Supertest</a>
+* <a href="https://www.npmjs.com/package/ts-jest">ts-jest</a>
+* <a href="https://www.npmjs.com/package/ts-node-dev">ts-node-dev</a>
+* <a href="https://www.npmjs.com/package/typescript">TypeScript</a>
+
+
 
 
 
