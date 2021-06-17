@@ -22,7 +22,7 @@ export default async function (
   const [scheme, token] = parts;
 
   if (!/^Bearer$/i.test(scheme)) {
-    return response.status(400).json({ error: 'Token malformatted' });
+    return response.status(400).json({ error: 'Token malformatted ' });
   }
 
   jwt.verify(token, authConfig.secret, (err, decoded) => {
