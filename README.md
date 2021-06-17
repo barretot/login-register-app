@@ -1,6 +1,7 @@
 # SingUp-SigIn-App
 Este projeto serve como um backend para funcionar como API público para demonstrar a utilização da API do SingUp-SigIn-App. O seu objetivo é o usuário 
-se cadastrar ou se logar gerando assim um token de acesso para possuir permissão para usar as outras funcionalidades da API.
+se cadastrar ou se logar gerando assim um token de acesso para possuir permissão para usar as outras funcionalidades da API. Desenvolvido utilizando o superset
+TypeScript + express.
 
 ### Entendendo a API
 Para compreender melhor o uso da API consulte a documentação criada pelo desenvovedor <a href="https://www.notion.so/Register-Login-App-82b9b9bb13034ff6994d6a601cff895c"> Register Login App Docs <a/> 
