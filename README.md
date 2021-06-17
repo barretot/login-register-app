@@ -2,6 +2,9 @@
 Este projeto serve como um backend para funcionar como API público para demonstrar a utilização da API do SingUp-SigIn-App. O seu objetivo é o usuário 
 se cadastrar ou se logar gerando assim um token de acesso para possuir permissão para usar as outras funcionalidades da API.
 
+### Entendendo a API
+Para compreender melhor o uso da API consulte a documentação criada pelo desenvovedor <a href="https://www.notion.so/Register-Login-App-82b9b9bb13034ff6994d6a601cff895c"> Register Login App Docs <a/> 
+
 ![logo_transparent](https://user-images.githubusercontent.com/56320849/122453856-0f56a700-cf81-11eb-95ab-f23befa0b0d8.png)
 <em>Logo criado em: https://hatchful.shopify.com/pt-BR/</em>
 
@@ -56,7 +59,6 @@ Após instalar o <a href="https://www.mongodb.com/try/download/compass">MongoDB 
 mongodb+srv://UserDB:user2021@ecommerce.ustac.mongodb.net/test
 ```
 ![image](https://user-images.githubusercontent.com/56320849/122455490-d4557300-cf82-11eb-9037-0c29707bbd45.png)
-
 
 ### Executando testes
 Os testes foram implementados usando a biblioteca <a href="https://jestjs.io/">jest</a>. Para executar os testes, crie um arquivo chamado **`.env.test`** para citar as variáveis de ambiente dos testes e coloque as seguintes informações:
