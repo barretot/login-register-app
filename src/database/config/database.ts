@@ -1,8 +1,8 @@
+import mongoose from 'mongoose';
+
 require('dotenv').config({
   path: process.env.NODE_ENV === 'test' ? '.env.test' : '.env',
 });
-
-const mongoose = require('mongoose');
 
 const username = process.env.MONGO_USERNAME;
 const password = process.env.MONGO_PASSWORD;
