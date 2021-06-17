@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "tsnd --transpile-only --respawn --ignore-watch node_modules --ignore __tests__ src/server.ts ",
+    "start": "tsnd --transpile-only --respawn --ignore-watch node_modules src/server.ts ",
     "test": "jest"
   },
   "dependencies": {
