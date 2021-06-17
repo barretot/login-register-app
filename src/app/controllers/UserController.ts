@@ -5,6 +5,28 @@ import * as Yup from 'yup';
 import { Request, Response } from 'express';
 
 export default {
+  async index(request: Request, response: Response): Promise<Response> {
+    const userIndex = await UserModel.find();
+
+    if (!userIndex.length) {
+      return response.status(400).json({
+        error: 'Usuários não encontrados, registre.',
+      });
+    }
+    return response.status(200).json({ userIndex });
+  },
+
+  async search(request: Request, response: Response): Promise<Response> {
+    const userSearch = await UserModel.findById(request.params.id);
+
+    if (!userSearch === null) {
+      return response.status(400).json({ error: 'Usuário não encontrado' });
+    }
+    return response
+      .status(200)
+      .json({ message: 'Usuário encontrado', userSearch });
+  },
+
   async create(request: Request, response: Response): Promise<Response> {
     const validationFields: Yup.AnyObjectSchema = Yup.object().shape({
       name: Yup.string().required().min(1),
@@ -17,12 +39,12 @@ export default {
 
     if (!(await validationFields.isValid(request.body))) {
       // Verifica se passou pelo schema
-      return response.status(401).json({ error: 'Invalid Fields' });
+      return response.status(400).json({ error: 'Campos inválidos' });
     }
 
     if (await UserModel.findOne({ email })) {
-      return response.status(401).json({
-        error: 'User already exists',
+      return response.status(400).json({
+        error: 'E-mail já existente',
       });
     }
 
@@ -36,10 +58,21 @@ export default {
     // Hide password
     userCreate.password = undefined;
 
-    return response.status(201).json({
-      message: 'Sucess',
+    return response.status(200).json({
+      message: 'Sucesso',
       userCreate,
-      token: generateToken({ id: userCreate._id }),
+      token: `Bearer ${generateToken({ id: userCreate._id })}`,
     });
+  },
+
+  async delete(request, response: Response): Promise<Response> {
+    try {
+      await UserModel.findOneAndDelete(request.params.id);
+      return response.status(200).json({ Message: 'Deletado com sucesso!' });
+    } catch (err) {
+      response.status(400).json({
+        error: err.message,
+      });
+    }
   },
 };

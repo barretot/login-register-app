@@ -14,7 +14,7 @@ export default {
 
     if (!(await validationFields.isValid(request.body))) {
       // Verifica se passou pelo schema
-      return response.status(400).json({ error: 'Invalid Fields' });
+      return response.status(400).json({ error: 'Email ou senha inválidos' });
     }
 
     const { email, password } = request.body;
@@ -22,11 +22,11 @@ export default {
     const user = await UserModel.findOne({ email }).select('+password');
 
     if (!user) {
-      return response.status(400).json({ error: 'User not found' });
+      return response.status(400).json({ error: 'Usuário não encontrado' });
     }
 
     if (!(await bcrypt.compare(password, user.password))) {
-      return response.status(400).json({ error: 'Invalid password' });
+      return response.status(401).json({ error: 'Email ou senha inválidos' });
     }
 
     // Hide password
@@ -34,7 +34,7 @@ export default {
 
     response.status(200).json({
       user,
-      token: generateToken({ id: user._id }),
+      token: `Bearer ${generateToken({ id: user._id })}`,
     });
   },
 };

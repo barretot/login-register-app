@@ -6,9 +6,7 @@ import bcrypt from 'bcryptjs';
 
 const schema = new Schema<User>({
   _id: { type: 'string', default: uuid_v4 },
-  createdAt: { type: Date, default: Date.now() },
-  updateAt: { type: Date, default: Date.now() },
-  lastLogin: { type: Date, default: Date.now() },
+  createdAt: { type: Date, default: Date.now(), select: false },
 
   name: { type: String, required: true },
   email: { type: String, required: true },

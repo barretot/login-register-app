@@ -5,13 +5,12 @@ import authMiddleware from './app/middlewares/auth';
 
 const routes = Router();
 
-routes.post('/users/auth', SessionController.createSession);
-routes.post('/users', UserController.create);
+routes.post('/users/signup', UserController.create);
+routes.post('/users/signin', SessionController.createSession);
 
-routes.use(authMiddleware);
+routes.get('/users/search', authMiddleware, UserController.index);
+routes.get('/users/search/:id', authMiddleware, UserController.search);
 
-routes.get('/test', (req, res) => {
-  res.send({ test: 'ok' });
-});
+routes.delete('/users/delete/:id', authMiddleware, UserController.delete);
 
 export { routes };
