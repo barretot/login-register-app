@@ -17,7 +17,9 @@ export default {
   },
 
   async search(request: Request, response: Response): Promise<Response> {
-    const userSearch = await UserModel.findById(request.params.id);
+    const userSearch = await UserModel.findById(request.params.id).select(
+      '+password',
+    );
 
     if (!userSearch === null) {
       return response.status(400).json({ error: 'Usuário não encontrado' });
