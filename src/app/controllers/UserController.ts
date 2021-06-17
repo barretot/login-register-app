@@ -6,7 +6,7 @@ import { Request, Response } from 'express';
 
 export default {
   async index(request: Request, response: Response): Promise<Response> {
-    const userIndex = await UserModel.find();
+    const userIndex = await UserModel.find().select('+password');
 
     if (!userIndex.length) {
       return response.status(400).json({
