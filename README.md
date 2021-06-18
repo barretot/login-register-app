@@ -57,7 +57,7 @@ Para ver as coleções criada pela aplicação, baixe o software <a href="https:
 Após instalar o <a href="https://www.mongodb.com/try/download/compass">MongoDB Compass</a> em sua máquina, cole esta connection string no campo que é pedido e terá acesso as coleções.
 
 ```
-mongodb+srv://UserDB:user2021@ecommerce.ustac.mongodb.net/test
+mongodb+srv://admin:admin@ecommerce.ustac.mongodb.net/test
 ```
 ![image](https://user-images.githubusercontent.com/56320849/122455490-d4557300-cf82-11eb-9037-0c29707bbd45.png)
 
